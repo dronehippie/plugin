@@ -6,6 +6,10 @@
 
 - Initial commit
 
+### Pipeline
+
+- Drop unused drone pipelines
+
 ### Refactoring
 
 - Drop unused network functionality
