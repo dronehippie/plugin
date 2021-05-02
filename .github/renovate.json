@@ -3,7 +3,7 @@
         "config:base",
         ":dependencyDashboard",
         ":semanticCommits",
-        ":semanticCommitScope(deps)",
+        ":semanticCommitType(deps)",
         ":automergeMinor",
         ":automergeDigest"
     ],
@@ -16,6 +16,7 @@
     },
     "gomod": {
         "postUpdateOptions": [
+            "gomodUpdateImportPaths",
             "gomodTidy"
         ]
     },
@@ -27,6 +28,65 @@
             "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\\nENV .*?_VERSION=\"\\${.*:-(?<currentValue>.*)}\"\\s"
         ]
     }],
+    "packageRules": [{
+            "description": "Automerge digest updates",
+            "groupName": "docker digests",
+            "matchDatasources": [
+                "docker"
+            ],
+            "matchUpdateTypes": [
+                "pin",
+                "digest",
+                "major",
+                "minor",
+                "patch"
+            ],
+            "semanticCommitScope": "minor",
+            "automerge": true
+        },
+        {
+            "description": "Semantic commits for major updates",
+            "groupName": "major updates",
+            "matchDatasources": [
+                "github-releases",
+                "github-tags",
+                "go"
+            ],
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "semanticCommitScope": "major",
+            "automerge": true
+        },
+        {
+            "description": "Semantic commits for minor updates",
+            "groupName": "minor updates",
+            "matchDatasources": [
+                "github-releases",
+                "github-tags",
+                "go"
+            ],
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "semanticCommitScope": "minor",
+            "automerge": true
+        },
+        {
+            "description": "Semantic commits for patch updates",
+            "groupName": "patch updates",
+            "matchDatasources": [
+                "github-releases",
+                "github-tags",
+                "go"
+            ],
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "semanticCommitScope": "patch",
+            "automerge": true
+        }
+    ],
     "labels": [
         "renovate"
     ]

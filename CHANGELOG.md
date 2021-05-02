@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.0 (2021-05-02)
+## v1.0.0 (2021-05-03)
 
 ### Others
 
@@ -8,6 +8,7 @@
 
 ### Pipeline
 
+- Added more package rules to renovate config
 - Drop unused drone pipelines
 
 ### Refactoring
