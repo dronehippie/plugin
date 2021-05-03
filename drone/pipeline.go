@@ -2,6 +2,8 @@ package drone
 
 // Pipeline provides Pipeline metadata from the environment.
 type Pipeline struct {
+	LogLevel string `envconfig:"PLUGIN_LOG_LEVEL"`
+
 	// Build provides build metadata.
 	Build struct {
 		Branch   string `envconfig:"DRONE_BUILD_BRANCH"`

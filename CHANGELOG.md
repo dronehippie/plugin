@@ -2,6 +2,10 @@
 
 ## v1.0.0 (2021-05-03)
 
+### Features
+
+- Add log level for plugins
+
 ### Others
 
 - Initial commit
