@@ -4,6 +4,7 @@
 
 ### Features
 
+- Add logrus formatter
 - Integrate urfave instead of envconfig
 - Add log level for plugins
 
