@@ -8,6 +8,7 @@
 
 ### Features
 
+- Added template renderer
 - Export function for network and logging
 - Add logrus formatter
 - Integrate urfave instead of envconfig
