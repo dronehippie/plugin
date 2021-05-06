@@ -1,9 +1,10 @@
 # Changelog
 
-## v1.0.0 (2021-05-03)
+## v1.0.0 (2021-05-06)
 
 ### Features
 
+- Integrate urfave instead of envconfig
 - Add log level for plugins
 
 ### Others
