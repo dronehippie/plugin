@@ -8,7 +8,6 @@ type Pipeline struct {
 	Deploy      Deploy
 	Failed      Failed
 	Git         Git
-	Network     Network
 	PullRequest PullRequest
 	Repo        Repo
 	Semver      Semver

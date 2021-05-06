@@ -16,8 +16,8 @@ func loggingFlags() []cli.Flag {
 	}
 }
 
-// loggingFromContext maps the cli context into logging.
-func loggingFromContext(c *cli.Context) {
+// LoggingFromContext maps the cli context into logging.
+func LoggingFromContext(c *cli.Context) {
 	switch c.String("plugin.log-level") {
 	case "debug":
 		logrus.SetLevel(logrus.DebugLevel)

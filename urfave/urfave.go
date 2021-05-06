@@ -15,7 +15,6 @@ func Flags() []cli.Flag {
 	flags = append(flags, deployFlags()...)
 	flags = append(flags, failedFlags()...)
 	flags = append(flags, gitFlags()...)
-	flags = append(flags, networkFlags()...)
 	flags = append(flags, pullRequestFlags()...)
 	flags = append(flags, repoFlags()...)
 	flags = append(flags, semverFlags()...)
@@ -25,14 +24,13 @@ func Flags() []cli.Flag {
 	flags = append(flags, tagFlags()...)
 
 	flags = append(flags, loggingFlags()...)
+	flags = append(flags, networkFlags()...)
 
 	return flags
 }
 
 // PipelineFromContext creates a drone.Pipeline from the cli.Context.
 func PipelineFromContext(ctx *cli.Context) drone.Pipeline {
-	loggingFromContext(ctx)
-
 	return drone.Pipeline{
 		Build:       buildFromContext(ctx),
 		Calver:      calverFromContext(ctx),
@@ -40,7 +38,6 @@ func PipelineFromContext(ctx *cli.Context) drone.Pipeline {
 		Deploy:      deployFromContext(ctx),
 		Failed:      failedFromContext(ctx),
 		Git:         gitFromContext(ctx),
-		Network:     networkFromContext(ctx),
 		PullRequest: pullRequestFromContext(ctx),
 		Repo:        repoFromContext(ctx),
 		Semver:      semverFromContext(ctx),

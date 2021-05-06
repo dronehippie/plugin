@@ -24,8 +24,8 @@ func networkFlags() []cli.Flag {
 	}
 }
 
-// networkFromContext maps the cli context into Network.
-func networkFromContext(c *cli.Context) drone.Network {
+// NetworkFromContext maps the cli context into Network.
+func NetworkFromContext(c *cli.Context) drone.Network {
 	dialer := &net.Dialer{
 		Timeout:   30 * time.Second,
 		KeepAlive: 30 * time.Second,
