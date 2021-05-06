@@ -1,6 +1,10 @@
 # Changelog
 
-## v1.0.0 (2021-05-06)
+## v1.0.0 (2021-05-07)
+
+### Bugfixes
+
+- Remove unused envconfig tags
 
 ### Features
 

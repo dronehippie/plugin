@@ -2,5 +2,5 @@ package drone
 
 // Tag provides the git tag details.
 type Tag struct {
-	Name string `envconfig:"DRONE_TAG"`
+	Name string
 }
